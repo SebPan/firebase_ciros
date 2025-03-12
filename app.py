@@ -56,6 +56,7 @@ def test_endpoint():
     """Simple endpoint to echo back the received data for debugging"""
     try:
         data = request.get_json(force=True) if request.data else {}
+        print(data)
         return jsonify({
             "status": "success",
             "received_data": data,
